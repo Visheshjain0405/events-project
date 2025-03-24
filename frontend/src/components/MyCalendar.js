@@ -27,7 +27,7 @@ const MyCalendar = () => {
 
   const fetchEvents = async () => {
     try {
-      const res = await axios.get('http://localhost:5000/api/events');
+      const res = await axios.get('https://events-project-iia2.onrender.com/api/events');
       const mappedEvents = res.data.map(event => ({
         ...event,
         start: new Date(event.start),
@@ -64,7 +64,7 @@ const MyCalendar = () => {
 
     try {
       console.log('Attempting to delete event with ID:', selectedEvent._id);
-      const response = await axios.delete(`http://localhost:5000/api/events/${selectedEvent._id}`);
+      const response = await axios.delete(`https://events-project-iia2.onrender.com/api/events/${selectedEvent._id}`);
       console.log('Delete response:', response.data);
       setSelectedEvent(null);
       await fetchEvents();
