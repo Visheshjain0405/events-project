@@ -19,6 +19,7 @@ const MyCalendar = () => {
   const [events, setEvents] = useState([]);
   const [selectedEvent, setSelectedEvent] = useState(null);
   const [isModalOpen, setIsModalOpen] = useState(false);
+  const [currentDate, setCurrentDate] = useState(new Date()); // Add state for current date
 
   useEffect(() => {
     fetchEvents();
@@ -78,6 +79,11 @@ const MyCalendar = () => {
     setSelectedEvent(null);
   };
 
+  // Handle navigation (Next, Previous, Today, etc.)
+  const handleNavigate = (newDate) => {
+    setCurrentDate(newDate);
+  };
+
   return (
     <div className="space-y-6">
       <div className="flex space-x-4">
@@ -108,6 +114,11 @@ const MyCalendar = () => {
               borderRadius: '4px',
             },
           })}
+          date={currentDate} // Set the current date
+          onNavigate={handleNavigate} // Handle navigation events
+          views={['month', 'week', 'day', 'agenda']} // Explicitly enable views
+          defaultView="month" // Set default view
+          toolbar={true} // Ensure toolbar is enabled
         />
       </div>
 
