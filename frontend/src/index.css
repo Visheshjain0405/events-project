@@ -1,0 +1,79 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* Custom styles for react-big-calendar */
+.rbc-calendar {
+  @apply bg-white text-gray-800 rounded-lg;
+}
+
+.rbc-toolbar {
+  @apply bg-blue-100 text-blue-700 p-2 flex flex-wrap justify-between items-center;
+}
+
+.rbc-toolbar button {
+  @apply text-blue-600 hover:bg-blue-200 px-2 py-1 rounded cursor-pointer bg-transparent border-none;
+}
+
+.rbc-month-view,
+.rbc-time-view {
+  @apply border-blue-200;
+}
+
+.rbc-event {
+  @apply bg-green-500 text-white rounded;
+}
+
+.rbc-event.rbc-selected {
+  @apply bg-green-600;
+}
+
+.rbc-today {
+  @apply bg-blue-50;
+}
+
+.rbc-header {
+  @apply bg-blue-100 text-blue-700 border-blue-200;
+}
+
+.rbc-day-bg:hover {
+  @apply bg-blue-50;
+}
+
+/* Dark mode styles */
+.dark .rbc-calendar {
+  @apply bg-gray-800 text-gray-200;
+}
+
+.dark .rbc-toolbar {
+  @apply bg-purple-900 text-purple-300 flex flex-wrap justify-between items-center;
+}
+
+.dark .rbc-toolbar button {
+  @apply text-purple-300 hover:bg-purple-800 px-2 py-1 rounded cursor-pointer bg-transparent border-none;
+}
+
+.dark .rbc-month-view,
+.dark .rbc-time-view {
+  @apply border-purple-700;
+}
+
+.dark .rbc-event {
+  @apply bg-green-600 text-white;
+}
+
+.dark .rbc-event.rbc-selected {
+  @apply bg-green-700;
+}
+
+.dark .rbc-today {
+  @apply bg-purple-800;
+}
+
+.dark .rbc-header {
+  @apply bg-purple-900 text-purple-300 border-purple-700;
+}
+
+.dark .rbc-day-bg:hover {
+  @apply bg-purple-800;
+}
