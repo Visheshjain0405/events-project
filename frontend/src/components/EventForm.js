@@ -54,10 +54,10 @@ const EventForm = ({ onEventAdded, selectedEvent, onDelete }) => {
 
     try {
       if (selectedEvent) {
-        await axios.put(`http://localhost:5000/api/events/${selectedEvent._id}`, event);
+        await axios.put(`https://events-project-iia2.onrender.com/api/events/${selectedEvent._id}`, event);
         toast.success('Event updated successfully!');
       } else {
-        await axios.post('http://localhost:5000/api/events', event);
+        await axios.post('https://events-project-iia2.onrender.com/api/events', event);
         toast.success('Event added successfully!');
       }
       onEventAdded();
